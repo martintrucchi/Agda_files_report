@@ -1,12 +1,9 @@
 ---
-title:          Overtness in Synthetic Topology
+title:          Small proposition 2.13
 author:         Martin Trucchi
 date-started:   2024-05-28
 dates-modified: [2024-06-06]
 ---
-
-We implement here the notion of overtness in Synthetic Topology defined here :
-TODO, and prove some lemmas.
 
 \begin{code}
 
@@ -39,11 +36,7 @@ open Sierpinski-notations fe pe pt 𝕊
 
 \end{code}
 
-Overtness
-
-Overtness is a dual notion of compactness.
-A set is `overt` if the proposition `∃ x , x ∈ₚ P` is `open` whenever `P` is
-`open`.
+We look at proposition 2.13 in Lešnik's thesis.
 
 \begin{code}
 
@@ -70,9 +63,15 @@ module _ (𝒳 : hSet 𝓤) where
    where
     open Equality sY
 
- proposition-2-13-right-to-left
+\end{code}
+
+The type of the formula
+
+\begin{code}
+
+ proposition-2-13-right-to-left-type
   : {𝓥 𝓦 : Universe} (X : 𝓥 ̇) → (Y : 𝓦 ̇) → (U : 𝓟 (X × Y)) → Y → 𝓥 ⊔ 𝓦 ̇
- proposition-2-13-right-to-left X Y U y
+ proposition-2-13-right-to-left-type X Y U y
   = ∃ (x , y') ꞉ X × Y , (x , y') ∈ U × (y ＝ y')
   
 \end{code}
